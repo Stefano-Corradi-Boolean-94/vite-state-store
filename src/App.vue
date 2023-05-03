@@ -12,6 +12,15 @@ export default {
     Header,
     Main,
     Footer
+  },
+  methods:{
+    // i parametri vengono passati inplicitamente
+    miaFunzione(saluto, numero){
+      console.log('Evento custom',saluto, numero);
+    },
+    altroEvento(msg){
+      console.log('--->',msg);
+    }
   }
 }
 </script>
@@ -22,7 +31,7 @@ export default {
 
   <Main />
 
-  <Footer />
+  <Footer @mioEvento="miaFunzione" @altroEventoCustom="altroEvento" />
 
 </template>
 
